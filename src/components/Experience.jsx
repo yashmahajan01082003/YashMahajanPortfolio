@@ -4,6 +4,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
+import { github } from "../assets";
 
 import "react-vertical-timeline-component/style.min.css";
 

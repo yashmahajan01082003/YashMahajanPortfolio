@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import cv from "../assets/YashCV.pdf";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
@@ -38,27 +39,66 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
+
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
+      <div className='mt-12 flex gap-8'>
+        <a
+          href='https://github.com/yashmahajan01082003'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='bg-tertiary rounded-[10px] py-3 px-3 flex'
+        >
+          GitHub
+        </a>
+
+        <a
+          href='https://www.linkedin.com/in/yash-mahajan-83b857247/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='bg-tertiary rounded-[10px] py-3 px-3 flex'
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href='https://leetcode.com/u/yash01082003/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='bg-tertiary rounded-[10px] py-3 px-3 flex'
+        >
+          LeetCode
+        </a>
+
+        <a
+          href={cv}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='bg-tertiary rounded-[10px] py-3 px-3 flex'
+        >
+          See CV
+        </a>
+      </div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
+        I'm a skilled software developer with experience in Java, C, C++, Python and
+        Javascript and expertise in frameworks like Django, React.js, Node.js, and
+        Next.js . I'm a quick learner and collaborate closely with clients to
         create efficient, scalable, and user-friendly solutions that solve
         real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-8 flex flex-wrap gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
+
     </>
   );
 };
